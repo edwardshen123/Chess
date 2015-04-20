@@ -7,18 +7,20 @@ public class Java {
     private boolean end;
     private Scanner sc;
 
+    private char block = '*';
+
     //Pieces
-    private char knight = 'k';
+    private char knight = 'N';
     private char queen = 'Q';
     private char king = 'K';
-    private char pawn = 'p';
-    private char bishop = 'b';
-    private char rock = 'r';
+    private char pawn = 'P';
+    private char bishop = 'B';
+    private char rook = 'R';
 
     public Java() {
 	end = false;
 	sc = new Scanner();
-	board = new char[][];
+	board = new char[8][8];
 	setUp();
     }
 
@@ -31,6 +33,17 @@ public class Java {
 
     //sets up the board
     public void setUp() {
+	board[0][0] = rook;
+	board[0][1] = knight;
+	board[0][2] = bishop;
+	board[0][3] = queen;
+	board[0][4] = king;
+	board[0][5] = bishop;
+	board[0][6] = knight;
+	board[0][7] = rook;
+	for (int i = 0; i < 8; i++) {
+	    board[1][i] = pawn;
+	}
     }
 
     //prints the board
