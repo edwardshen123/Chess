@@ -3,19 +3,11 @@ import java.util.Scanner;
 public class Java {
 
     //Game Variables
-    private char[][] board;
+    private String[][] board;
     private boolean end;
     private Scanner sc;
 
-    private char block = '*';
-
-    //Pieces
-    private char knight = 'N';
-    private char queen = 'Q';
-    private char king = 'K';
-    private char pawn = 'P';
-    private char bishop = 'B';
-    private char rook = 'R';
+    private String block = "*";
 
     public Java() {
 	end = false;
@@ -51,8 +43,11 @@ public class Java {
 	String s = "";
 	for (int i = 0; i < board.length; i++) {
 	    for (int j = 0; j < board[i].length; j++) {
+		s += board[i][j];
 	    }
+	    s += "\n";
 	}
+	return s;
     }
 
     public static void main(String[] args) {
